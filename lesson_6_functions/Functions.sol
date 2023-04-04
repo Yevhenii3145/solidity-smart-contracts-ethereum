@@ -3,6 +3,7 @@
 pragma solidity ^0.8.0;
 
 contract Demo {
+<<<<<<< HEAD
     // public - (область видимости) данную функцию можно вызывать извне смартконтракта путем отправки  транзакции и изнутри смартконтракта (другая функция может обратится к функции котрая public)
     // external - к функции можно обращатся  только извне смартконтракта, а изнутри смарт контракта обращаться нельзя
     // internal - к функции можно обращаться изнутри смартконтракта, но нельзя извне (еще можно со смартконтрактов которые наследуют данный смартконтракт)
@@ -52,5 +53,13 @@ contract Demo {
     function rate(uint amount) public pure returns(uint) {
         return amount * 3;
     }
+=======
+    // public
+    // external
+    // internal
+    // private
+    
+    function getBalance() public {}
+>>>>>>> parent of 01dde7a6 (Merge branch 'main' of https://github.com/Yevhenii3145/solidity-smart-contracts-ethereum)
 }
 
