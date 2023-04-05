@@ -15,11 +15,15 @@ contract Demo {
         owner = msg.sender;
     }
 
+    receive() external payable {
+        emit Paid(msg.sender, msg.value, block.timestamp);
+    }
+
     function pay() external payable {
         emit Paid(msg.sender, msg.value, block.timestamp); // в журнал событий будет записано данное событие, за это не платим деньги как за хранение в блокчейне
         // + можно написать фронтенд и используя библиотеку ethers.js подписаться на прослушивание событий в журнале, но изнутри смартконтракта считать события с журнала нельзя
     }
-
+    
     // модификаторы
     modifier onlyOwner(address _to) {
         require(msg.sender == owner, "you are not an owner!"); // Проверяем, чтобы функцию по списанию средств вызывал владелец контракта, а не кто-либо другой
