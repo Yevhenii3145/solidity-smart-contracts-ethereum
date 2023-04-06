@@ -4,8 +4,8 @@ pragma solidity ^0.8.0;
 
 // Merkle tree
     /*
-                (Hroot)
-                   ^
+                 (Hroot)
+                    ^
       (H1-2-3-4)          H5-6-7-8
          ^                 ^
      H1-2  H3-4       H5-6   (H7-8)
@@ -53,7 +53,7 @@ contract Tree {
                             /*
                                     0       0          0            1
                                     0   +   2  (2)     2   +  0  +  1  (3)
-                                    4       0          4            1\
+                                    4       0          4            1  (5)
                             */
                 }
                 offset += count; // на 2 итерации offset = 4 т.к. count = 4   // 0/4/6/7
@@ -69,9 +69,12 @@ contract Tree {
         // i=4 hashes  0x58e9a664a4c1e26694e09437cad198aebc6cd3c881ed49daea6e83e79b77fead
 
         /*
-            Hroot
+             Hroot
+               6
           H1-2   H3-4
+           4      5
         H1  H2  H3  H4      // если индекс четный, то для построения общего хеша мы берем элемент который находится справа 
+        0   1   2   3
         TX1 TX2 TX3 TX4     // если индекс нечетный, то для тогда берем элемент слева
         */
 
@@ -79,7 +82,7 @@ contract Tree {
         for(uint i = 0; i < proof.length; i++) {
             bytes32 element = proof[i];
             if(index % 2 == 0) {
-                hash = keccak256(abi.encodePacked(hash,element));
+                hash = keccak256(abi.encodePacked(hash, element));
             } else {
                 hash = keccak256(abi.encodePacked(element, hash));
             }
