@@ -1,0 +1,45 @@
+{
+	"compiler": {
+		"version": "0.8.19+commit.7dd6d404"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"lesson_9_optimization_of_contracts/Demo.sol": "Un"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"lesson_9_optimization_of_contracts/Demo.sol": {
+			"keccak256": "0x5f72c0aa02f92d4292dc0fca11d10e93902535a86738788c124f17b047a8c2b5",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://a4f9d7a2c9550ef6acc6756afa36c4b86ef713a1af3d2e2e291626514e341d1e",
+				"dweb:/ipfs/QmYcx8DuwZMEJbVZhBWWR3w7b9fcz5XrwTNHDVXBUzhjMg"
+			]
+		}
+	},
+	"version": 1
+}
